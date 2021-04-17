@@ -10,7 +10,9 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
   # Here comes the gganimate specific bits
   labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
   transition_time(year) +
-  ease_aes('linear')
+  ease_aes('linear') 
+#保存上次运行的图
+  anim_save("gg.gif")
 
 ggplot(mtcars, aes(factor(cyl), mpg)) + 
   geom_boxplot() + 
@@ -22,4 +24,6 @@ ggplot(mtcars, aes(factor(cyl), mpg)) +
   ) +
   enter_fade() + 
   exit_shrink() +
-  ease_aes('sine-in-out')
+  ease_aes('sine-in-out') 
+#保存gif图
+  anim_save("gg2.gif")

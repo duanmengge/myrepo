@@ -2,7 +2,7 @@ library(readxl)
 library(dplyr)
 library(data.table)
 
-#data<-read_excel("Documents/example.xls")
+data<-read_excel("Documents/example.xls")
 data<-do.call("rbind", replicate(200, data, simplify = FALSE))
 
 f<-function(data){
